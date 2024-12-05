@@ -1,3 +1,15 @@
 {
-  "extends": "@react-native/typescript-config/tsconfig.json"
+  "extends": "@react-native/typescript-config/tsconfig.json",
+  "compilerOptions": {
+    "module": "es2022",
+		"jsx": "react-jsx",
+		"target": "es6",
+		"strict": true,
+		"pretty": true,
+		"baseUrl": ".",
+		"skipLibCheck": true,
+    "paths":{
+      "@screens": ["src/screens/index"],
+    }
+  },
 }
