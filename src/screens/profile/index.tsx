@@ -1,9 +1,9 @@
 import React from 'react';
 import {Text, View} from 'react-native';
-import {useTheme} from '../../context/themeContext';
+import {useAppTheme} from 'src/themes/hook';
 
 export const ProfileScreen = () => {
-  const {theme} = useTheme();
+  const theme = useAppTheme();
 
   return (
     <View>

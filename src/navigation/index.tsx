@@ -7,15 +7,18 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import * as Screens from '../screens';
 import {routes} from './routes';
 import DrawerStack from './drawer';
-import {useTheme} from '../context/themeContext';
+import {useAppStore} from '../store/appstore/';
+import {darkTheme, lightTheme} from '../themes/default';
+import {KEY_NAME} from '../utils/identifiers';
 
 const AppNavigation = () => {
   const RootStackNavigation = createNativeStackNavigator();
   const navigationRef = createNavigationContainerRef();
-  const {theme} = useTheme();
+  const {theme} = useAppStore();
+  const appTheme = theme === KEY_NAME.DARK ? darkTheme : lightTheme;
 
   return (
-    <NavigationContainer ref={navigationRef} theme={theme}>
+    <NavigationContainer ref={navigationRef} theme={appTheme}>
       <RootStackNavigation.Navigator screenOptions={{headerShown: true}}>
         {/* Drawer Routes */}
         <RootStackNavigation.Screen

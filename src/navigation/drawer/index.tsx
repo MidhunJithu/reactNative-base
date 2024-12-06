@@ -1,5 +1,5 @@
 import {createDrawerNavigator} from '@react-navigation/drawer';
-import * as Screens from '../../screens';
+import * as Screens from 'src/screens';
 import React from 'react';
 import {drawerRoutes} from './routes';
 
@@ -21,7 +21,6 @@ const DrawerStack = () => {
           options={route.options}
         />
       ))}
-      {/* <Drawer.Screen name="SettingsScreen" component={SettingsScreen} /> */}
     </Drawer.Navigator>
   );
 };

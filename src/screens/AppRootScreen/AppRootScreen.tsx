@@ -1,20 +1,18 @@
 import {SafeAreaProvider} from 'react-native-safe-area-context';
 import React from 'react';
 import {GestureHandlerRootView} from 'react-native-gesture-handler';
-import {AuthContextProvider} from '../../context/authContext';
-import {DataProvider} from '../../context/dataContext';
-import AppNavigation from '../../navigation';
-import {ThemeProvider} from '../../context/themeContext';
+import {AuthContextProvider} from 'src/context/authContext';
+import {DataProvider} from 'src/context/dataContext';
+import AppNavigation from 'src/navigation';
+import {globalStyles} from 'src/styles/common';
 
 const AppRootScreen = () => {
   return (
     <SafeAreaProvider>
-      <GestureHandlerRootView style={{flex: 1}}>
+      <GestureHandlerRootView style={globalStyles.root}>
         <AuthContextProvider>
           <DataProvider>
-            <ThemeProvider>
-              <AppNavigation />
-            </ThemeProvider>
+            <AppNavigation />
           </DataProvider>
         </AuthContextProvider>
       </GestureHandlerRootView>

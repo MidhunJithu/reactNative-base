@@ -1,5 +1,6 @@
 import {DarkTheme, DefaultTheme} from '@react-navigation/native';
 import {ThemeType} from './types';
+import {COLORS} from 'src/utils/colors';
 
 export const lightTheme: ThemeType = {
   isDarkMode: false,
@@ -7,12 +8,12 @@ export const lightTheme: ThemeType = {
   dark: false,
   colors: {
     ...DefaultTheme.colors,
-    primary: '#000',
-    background: '#fff',
-    card: '#fff',
-    text: '#000',
-    border: '#000',
-    notification: '#000',
+    primary: COLORS.Black,
+    background: COLORS.White,
+    card: COLORS.White,
+    text: COLORS.Black,
+    border: COLORS.Black,
+    notification: COLORS.Black,
   },
 };
 export const darkTheme: ThemeType = {
@@ -21,12 +22,12 @@ export const darkTheme: ThemeType = {
   dark: true,
   colors: {
     ...DarkTheme.colors,
-    primary: '#fff',
-    background: '#000',
-    card: '#000',
-    text: '#fff',
-    border: '#fff',
-    notification: '#fff',
+    primary: COLORS.White,
+    background: COLORS.Black,
+    card: COLORS.Black,
+    text: COLORS.White,
+    border: COLORS.White,
+    notification: COLORS.White,
   },
 };
 
